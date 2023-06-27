@@ -1,0 +1,16 @@
+CAPÍTULO 2 ============================================
+->double - pontos flutuantes (8byte)
+->long - num (8byte)
+->int - num (4byte)
+->tem como forçar uma mudança de tipo com: 
+-----int numeroInteiro = (int) livroJava8, por exemplo
+
+double valor = 0;
+if (v1 > v2) {
+valor =	100;
+}else {
+valor = 0;
+}
+	OU :
+
+double valor = v1 > v2 ? 100 : 0;
