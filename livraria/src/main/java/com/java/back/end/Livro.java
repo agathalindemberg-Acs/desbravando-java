@@ -1,6 +1,6 @@
 package com.java.back.end;
 
-public class Livro {
+public abstract class Livro {
     public Livro(Autor autor) {
         this.autor = autor;
         this.isbn = "000-00-00000-00-0";
@@ -60,13 +60,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public boolean aplicaDescontoDe(double porcentagem) {
-        if (porcentagem > 0.3) {
-            return false;
-        }
-        this.valor -= this.valor * porcentagem;
-        return true;
-    }
+    public abstract boolean aplicaDescontoDe(double porcentagem);
 
     boolean temAutor() {
         return this.autor != null;
