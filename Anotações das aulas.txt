@@ -7,10 +7,16 @@ CAPÍTULO 2 ============================================
 
 double valor = 0;
 if (v1 > v2) {
-valor =	100;
+valor = 100;
 }else {
 valor = 0;
 }
-	OU :
+ OU :
 
 double valor = v1 > v2 ? 100 : 0;
+
+
+CAPÍTULO 9==========================
+	Também  já  conhecemos  o   private .  Esse  modificador  de acesso  torna  classes,  atributos,  métodos  ou  construtores  visíveis apenas para a própria classe. Por esse motivo, uma classe não deve ser  anotada  com   private ,  quem  poderá  acessá-la?  Mas  vimos que faz  bastante  sentido  sempre  deixar  seus  atributos   private para manter o encapsulamento.
+	Há ainda a visibilidade  default  (quando não há modificador algum). A essa altura, você já pode  ter percebido que, neste caso, apenas classes do mesmo  pacote  podem  ter  acesso  aos  atributos, construtores,  métodos  ou  classes  com  a  ausência  de  um modificador de acesso.
+ 	O último modificador é o  protected , que tentamos evitar no capítulo  de  herança.  Todo  elemento  que  for   protected   ficará visível para a própria classe, para suas classes filhas e também para quem estiver no mesmo pacote. Classes também não podem usar esse modificador de acesso.
