@@ -1,10 +1,14 @@
 package com.java.back.end.produtos;
 
+import com.java.back.end.exception.AutorNuloException;
 import com.java.back.end.livraria.Autor;
 import com.java.back.end.produtos.Produto;
 
 public abstract class Livro implements Produto {
     public Livro(Autor autor) {
+        if(autor == null){
+            throw new AutorNuloException("O Autor do Livro não pode ser nulo");
+        }
         this.autor = autor;
         this.isbn = "000-00-00000-00-0";
         this.impresso = true;
