@@ -29,12 +29,17 @@ public class Autor {
         this.cpf = cpf;
     }
 
-
-
     public void mostrarDetalhes(){
         System.out.println("Mostrandos os autores dos livros");
         System.out.println("Nome: " + nome);
         System.out.println("Email: " + email);
         System.out.println("CPF: " + cpf);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Autor)) return false;
+        Autor outro = (Autor) obj;
+        return this.nome.equals(outro.nome);
     }
 }

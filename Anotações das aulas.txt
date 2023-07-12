@@ -17,6 +17,66 @@ double valor = v1 > v2 ? 100 : 0;
 
 
 CAPÍTULO 9==========================
-	Também  já  conhecemos  o   private .  Esse  modificador  de acesso  torna  classes,  atributos,  métodos  ou  construtores  visíveis apenas para a própria classe. Por esse motivo, uma classe não deve ser  anotada  com   private ,  quem  poderá  acessá-la?  Mas  vimos que faz  bastante  sentido  sempre  deixar  seus  atributos   private para manter o encapsulamento.
-	Há ainda a visibilidade  default  (quando não há modificador algum). A essa altura, você já pode  ter percebido que, neste caso, apenas classes do mesmo  pacote  podem  ter  acesso  aos  atributos, construtores,  métodos  ou  classes  com  a  ausência  de  um modificador de acesso.
- 	O último modificador é o  protected , que tentamos evitar no capítulo  de  herança.  Todo  elemento  que  for   protected   ficará visível para a própria classe, para suas classes filhas e também para quem estiver no mesmo pacote. Classes também não podem usar esse modificador de acesso.
+ Também  já  conhecemos  o   private .  Esse  modificador  de acesso  torna  classes,  atributos,  métodos  ou  construtores  visíveis apenas para a própria classe. Por esse motivo, uma classe não deve ser  anotada  com   private ,  quem  poderá  acessá-la?  Mas  vimos que faz  bastante  sentido  sempre  deixar  seus  atributos   private para manter o encapsulamento.
+ Há ainda a visibilidade  default  (quando não há modificador algum). A essa altura, você já pode  ter percebido que, neste caso, apenas classes do mesmo  pacote  podem  ter  acesso  aos  atributos, construtores,  métodos  ou  classes  com  a  ausência  de  um modificador de acesso.
+  O último modificador é o  protected , que tentamos evitar no capítulo  de  herança.  Todo  elemento  que  for   protected   ficará visível para a própria classe, para suas classes filhas e também para quem estiver no mesmo pacote. Classes também não podem usar esse modificador de acesso.
+
+
+CAPÍTULO 10============================
+Por exemplo, o método  parseBoolean  da classe  Boolean 
+transforma uma  String  em um booleano. Veja:
+
+boolean resultado = Boolean.parseBoolean("false");
+O mesmo pode ser feito para os demais tipos:
+byte parseByte = Byte.parseByte("1");
+short parseShort = Short.parseShort("10");
+int parseInt = Integer.parseInt("10");
+long parseLong = Long.parseLong("10");
+float parseFloat = Float.parseFloat("10.0");
+double parseDouble = Double.parseDouble("10.0");
+
+Para transformar qualquer um desses valores em uma
+ String , podemos usar seu método estático  valueOf :
+String numeroEmTexto = String.valueOf(10);
+
+Claro, precisamos tomar bastante cuidado com o valor
+passado, pois adivinhe qual será o resultado do código a seguir?
+int parseInt = Integer.parseInt("ABC");
+Uma  Exception ! Neste caso:
+ java.lang.NumberFormatException: For input string:
+"ABC" . Faz bastante sentido, afinal, como transformar  ABC  em
+um número?
+
+
+
+String replace = java.replace("v", "c");
+String upperCase = java.toUpperCase();
+String lowerCase = "JAVA".toLowerCase();
+char charAt = java.charAt(0);
+boolean endsWith = java.endsWith("a");
+boolean startsWith = java.startsWith("s");
+boolean equals = java.equalsIgnoreCase("JAVA");
+
+Os valores das variáveis, respectivamente, serão:
+jaca
+JAVA
+java
+j
+true
+false
+true
+
+
+("CUP74", "CUP158", 
+            "CUP14", "CUP52", "CUP21", "CUP221", "CUP91", 
+            "CUP327", "CUP410", "CUP275", "CUP484", "CUP207", 
+            "CUP96", "CUP119", "CUP174", "CUP291", "CUP1", 
+            "CUP115", "CUP222", "CUP272")
+
+
+CAPÍTULO 12 ================================
+livros.forEach(l -> System.out.println(l.getNome()));
+
+O lambda  l  ->  System.out.println(l.getNome())   nada
+mais  diz  do  que:  "para  cada  livro,  chame  o  método   println 
+imprimindo seu nome"

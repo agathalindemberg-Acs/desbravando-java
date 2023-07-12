@@ -70,4 +70,21 @@ public abstract class Livro implements Produto {
     boolean temAutor() {
         return this.autor != null;
     }
+
+    public String toString(){
+        return "Nome: " + nome
+                +"/nDescrição: " + descricao
+                +"/nValor: " + valor
+                +"/nISBN: " + isbn;
+    }
+
+    public int compareTo(Produto outro){
+        if (this.getValor() < outro.getValor()){
+            return -1;
+        }
+        if (this.getValor() > outro.getValor()){
+            return 1;
+        }
+        return 0;
+    }
 }

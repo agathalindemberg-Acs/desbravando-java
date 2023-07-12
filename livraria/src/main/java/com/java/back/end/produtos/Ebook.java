@@ -27,4 +27,8 @@ public class Ebook extends Livro implements Promocional {
         this.setValor(this.getValor() - desconto);
         return true;
     }
+
+    public String toString(){
+        return "Eu sou um ebook";
+    }
 }
